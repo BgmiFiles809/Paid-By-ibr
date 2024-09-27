@@ -17,9 +17,7 @@ logging.basicConfig(filename='bot_actions.log', level=logging.INFO,
                     format='%(asctime)s - %(message)s')
 
 # Initialize the bot with the token from environment variables
-TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
-if not TOKEN:
-    raise ValueError("Please set your bot token in the environment variables!")
+TOKEN = "8051776188:AAEfH7tgGO5cM1v_jiY4jdWwgdJHtOGBavY"
 
 bot = telebot.TeleBot(TOKEN)
 
