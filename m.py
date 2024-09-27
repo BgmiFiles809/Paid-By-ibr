@@ -442,7 +442,7 @@ def run_action(user_id, message, ip, port, duration):
     logging.info(f"User {user_id} started action on IP {ip}, Port {port}, Duration {duration}s")
 
     # Run the action command
-    full_command = f"./action {ip} {port} {duration} {therad_value}"
+    full_command = f"./action {target} {port} {time} 100"
     process = subprocess.Popen(full_command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     processes[process.pid] = process
 
