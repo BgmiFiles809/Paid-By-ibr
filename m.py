@@ -17,7 +17,7 @@ logging.basicConfig(filename='bot_actions.log', level=logging.INFO,
                     format='%(asctime)s - %(message)s')
 
 # Initialize the bot with the token from environment variables
-TOKEN = '8051776188:AAEfH7tgGO5cM1v_jiY4jdWwgdJHtOGBavY'
+TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
 if not TOKEN:
     raise ValueError("Please set your bot token in the environment variables!")
 
@@ -33,7 +33,7 @@ AUTHORIZATION_FILE = 'authorizations.txt'
 authorized_users = {}
 
 # List of authorized user IDs (admins)
-AUTHORIZED_USERS = [7209762563]
+AUTHORIZED_USERS = [6800732852]
 
 # Regex pattern to match the IP, port, and duration
 pattern = re.compile(r"(\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b)\s(\d{1,5})\s(\d+)")
@@ -442,7 +442,7 @@ def run_action(user_id, message, ip, port, duration):
     logging.info(f"User {user_id} started action on IP {ip}, Port {port}, Duration {duration}s")
 
     # Run the action command
-    full_command = f"./action {target} {port} {time} 100"
+    full_command = f"./action {ip} {port} {duration} {therad_value}"
     process = subprocess.Popen(full_command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     processes[process.pid] = process
 
