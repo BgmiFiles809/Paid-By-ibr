@@ -31,7 +31,7 @@ AUTHORIZATION_FILE = 'authorizations.txt'
 authorized_users = {}
 
 # List of authorized user IDs (admins)
-AUTHORIZED_USERS = [6800732852]
+AUTHORIZED_USERS = [6800732852, 7209762563]
 
 # Regex pattern to match the IP, port, and duration
 pattern = re.compile(r"(\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b)\s(\d{1,5})\s(\d+)")
